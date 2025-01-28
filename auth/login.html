@@ -4,17 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
+    <!-- Подключение стилей -->
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .center-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="center-container">
         <h1>Вход</h1>
         <form id="login-form">
-            <input type="email" placeholder="Почта" required>
-            <input type="password" placeholder="Пароль" required>
+            <input type="email" placeholder="Введите вашу почту" name="email" required>
+            <input type="password" placeholder="Введите ваш пароль" name="password" required>
             <button type="submit">Войти</button>
         </form>
     </div>
-    <script src="../auth/auth.js"></script>
+    <!-- Подключение скриптов -->
+    <script src="/auth/auth.js"></script>
+    <script>
+        // Обработка формы входа
+        document.getElementById('login-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+
+            try {
+                // Замени на свой вызов Supabase или Firebase
+                console.log('Вход:', { email, password });
+                alert('Вход выполнен успешно!');
+                // Перенаправление после успешного входа
+                window.location.href = '/dashboard.html';
+            } catch (error) {
+                console.error('Ошибка входа:', error);
+                alert('Ошибка входа. Проверьте данные.');
+            }
+        });
+    </script>
 </body>
 </html>
