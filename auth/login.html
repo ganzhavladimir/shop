@@ -69,29 +69,27 @@
     <div class="center-container">
         <h1>Вход</h1>
         <form id="login-form">
-            <input type="email" placeholder="Введите вашу почту" name="email" required>
-            <input type="password" placeholder="Введите ваш пароль" name="password" required>
+            <input type="email" name="email" placeholder="Введите вашу почту" required>
+            <input type="password" name="password" placeholder="Введите ваш пароль" required>
             <button type="submit">Войти</button>
         </form>
     </div>
-    <!-- Подключение скриптов -->
-    <script src="/auth/auth.js"></script>
     <script>
-        // Обработка формы входа
+        // Обработчик отправки формы
         document.getElementById('login-form').addEventListener('submit', async (event) => {
             event.preventDefault();
+
             const email = event.target.email.value;
             const password = event.target.password.value;
 
             try {
-                // Замени на свой вызов Supabase или Firebase
-                console.log('Вход:', { email, password });
+                console.log('Вход с почтой:', email);
                 alert('Вход выполнен успешно!');
                 // Перенаправление после успешного входа
                 window.location.href = '/dashboard.html';
             } catch (error) {
                 console.error('Ошибка входа:', error);
-                alert('Ошибка входа. Проверьте данные.');
+                alert('Ошибка входа. Проверьте данные и попробуйте ещё раз.');
             }
         });
     </script>
