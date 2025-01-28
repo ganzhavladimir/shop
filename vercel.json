@@ -1,5 +1,7 @@
 {
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/" }
-    ]
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/public/css/:path*", "destination": "/public/css/:path*" },
+    { "source": "/auth/:path*", "destination": "/auth/:path*" }
+  ]
 }
