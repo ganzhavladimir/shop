@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <!-- Подключение стилей -->
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         /* Основные стили */
@@ -54,17 +53,16 @@
 <body>
     <div class="center-container">
         <h1>Регистрация</h1>
-        <p>Создайте аккаунт, используя Google</p>
+        <p>Создайте аккаунт с помощью Google</p>
         <button id="google-register">Регистрация через Google</button>
     </div>
-    <!-- Подключение скрипта -->
-    <script src="/auth/auth.js"></script>
     <script>
+        // Обработчик регистрации через Google
         document.getElementById('google-register').addEventListener('click', async () => {
             try {
-                // Вызов Supabase/Firebase для регистрации через Google
+                // Симуляция Google OAuth (замени на реальный вызов Supabase/Firebase)
                 console.log('Инициализация регистрации через Google');
-                alert('Регистрация через Google успешно выполнена!');
+                alert('Регистрация успешно выполнена!');
                 // Перенаправление после успешной регистрации
                 window.location.href = '/dashboard.html';
             } catch (error) {
